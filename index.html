@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LifeLine AI - Emergency Response System</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="logo">
+            <i class="fas fa-heartbeat"></i>
+            <h1>LifeLine AI</h1>
+        </div>
+        <div class="status">
+            <span class="live-indicator"></span>
+            <span>LIVE</span>
+        </div>
+    </header>
+
+    <div class="container">
+        <!-- Dashboard Grid -->
+        <div class="dashboard-grid">
+            <!-- Ambulance Status -->
+            <div class="card ambulance-card">
+                <h3><i class="fas fa-ambulance"></i> Active Ambulances</h3>
+                <div id="ambulance-list" class="ambulance-list">
+                    <!-- Dynamic content -->
+                </div>
+                <button id="emergency-btn" class="emergency-btn">
+                    <i class="fas fa-plus"></i> New Emergency
+                </button>
+            </div>
+
+            <!-- Traffic Signals -->
+            <div class="card traffic-card">
+                <h3><i class="fas fa-traffic-light"></i> Smart Signals</h3>
+                <div id="traffic-list" class="traffic-list">
+                    <!-- Dynamic content -->
+                </div>
+            </div>
+
+            <!-- AI Predictions -->
+            <div class="card ai-card">
+                <h3><i class="fas fa-brain"></i> AI Route Prediction</h3>
+                <div id="ai-prediction" class="ai-prediction">
+                    <div class="prediction-loading">
+                        <i class="fas fa-spinner fa-spin"></i>
+                        Analyzing routes...
+                    </div>
+                </div>
+            </div>
+
+            <!-- Map -->
+            <div class="card map-card">
+                <h3><i class="fas fa-map-marker-alt"></i> Live Map</h3>
+                <div id="map-container">
+                    <iframe 
+                        src="map.html" 
+                        frameborder="0" 
+                        style="width:100%; height:300px; border:none;">
+                    </iframe>
+                </div>
+            </div>
+
+            <!-- Hospital Alerts -->
+            <div class="card hospital-card">
+                <h3><i class="fas fa-hospital"></i> Hospital Alerts</h3>
+                <div id="hospital-alerts" class="hospital-alerts">
+                    <!-- Dynamic content -->
+                </div>
+            </div>
+
+            <!-- Driver Notifications -->
+            <div class="card driver-card">
+                <h3><i class="fas fa-car"></i> Driver Alerts</h3>
+                <div class="notification-area">
+                    <div class="notification">
+                        🚨 Ambulance approaching - Clear lane 1
+                    </div>
+                    <div class="notification sent">
+                        📱 SMS sent to 2,847 drivers
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Socket.IO -->
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
